@@ -19,12 +19,29 @@
 // };
 // makeIntoObject([["person", "isa"]]) // { person: 'isa' }
 
+// function middleIndx(str) {   // returns the middle letter
+//   if(str.length % 2){
+//     let char = str.charAt(Math.floor(str.length/2));
+//     return char;
+//   }else{
+//     let char = str.charAt(str.length/2) + str.charAt((str.length/2) + 1);
+//     return char;
+//   };
+// };
+//   console.log(middleIndx("Adia"))
+
+
 module.exports = {
   middleIndx(str) {   // returns the middle letter
-    let middle = (str.length / 2 ) - 1;
-    let char = str.chartAt(middle);
-    return char;
+    if(str.length % 2){
+      let char = str.charAt(Math.floor(str.length/2));
+      return char;
+    }else{
+      let char = str.charAt(str.length/2) + str.charAt((str.length/2) + 1);
+      return char;
+    };
   },
+
   makeIntoObject(arr) { // returns a object with key and value;
     return arr.reduce((acc, el)=> {
       acc[el[0]] = el[1];
